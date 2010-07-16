@@ -11,7 +11,7 @@
 	-->
 	<security:http entry-point-ref="casAuthenticationEntryPoint"
 		auto-config="true">
-		<security:intercept-url pattern="/**" access="ROLE_USER"></security:intercept-url>
+		<security:intercept-url pattern="/**" access="ROLE_ADMIN"></security:intercept-url>
 		<security:custom-filter position="CAS_FILTER"
 			ref="casAuthenticationFilter"></security:custom-filter>
 	</security:http>
@@ -77,6 +77,6 @@
 		The users available for this application.
 	-->
 	<security:user-service id="userService">
-		<security:user name="user" password="user__" authorities="ROLE_USER"></security:user>
+		<security:user name="admin" password="admin__" authorities="ROLE_ADMIN"></security:user>
 	</security:user-service>
 </beans>
